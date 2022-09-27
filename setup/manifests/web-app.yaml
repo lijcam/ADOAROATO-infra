@@ -11,4 +11,4 @@ spec:
     path: app
   destination:
     namespace: web-app
-    server: https://api.oru05yrt.australiacentral.aroapp.io:6443
+    server: https://api.raztbcr2.australiacentral.aroapp.io:6443
