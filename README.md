@@ -10,7 +10,8 @@ If you haven't done so already, clone this git repo to a convenient location, th
 
 Ensure you are logged into Azure via the cli (az login) then run cluster-create.sh to create the openshift cluster. Once completed run argo-create.sh to install the argocd operator and web-app. 
 
-Script Summary
+**Script Summary**
+
 setup/cluster-create.sh - Creates an Openshift cluster in Azure
 
 setup/argo-create.sh - Sets up the argocd operator in the argocd namespace. Registers the web-app to be managed by argocd and syncs the application into the web-app namespace. 
