@@ -2,11 +2,25 @@
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+To get an Openshift cluster running in Azure you will need a pull secret which can be obtained from the following link:
+
+https://console.redhat.com/openshift/install/pull-secret
+
+If you haven't done so already, clone this git repo to a convenient location, then copy the pull secret to setup/pull-secret.txt
+
+Ensure you are logged into Azure via the cli (az login) then run cluster-create.sh to create the openshift cluster. Once completed run argo-create.sh to install the argocd operator and web-app. 
+
+**Script Summary**
+
+setup/cluster-create.sh - Creates an Openshift cluster in Azure
+
+setup/argo-create.sh - Sets up the argocd operator in the argocd namespace. Registers the web-app to be managed by argocd and syncs the application into the web-app namespace. 
+
+setup/utilities/ocp-login.sh - Prints the kubeadmin username and password, the webconsole url, and logs in as kubeadmin
+
+setup/utilities/delete-cluster.sh - Deletes openshift off Azure, this is your nuclear option for a hard reset
+
+setup/utiliites/delete-argo.sh - Deletes argocd and the web-app from your cluster, undoing everything done by argo-create.sh. Useful for resetting the demo once done
 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
