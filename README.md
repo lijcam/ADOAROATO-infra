@@ -3,8 +3,11 @@ TODO: Give a short introduction of your project. Let this section explain the ob
 
 # Getting Started
 To get an Openshift cluster running in Azure you will need a pull secret which can be obtained from the following link:
+
 https://console.redhat.com/openshift/install/pull-secret
+
 If you haven't done so already, clone this git repo to a convenient location, then copy the pull secret to setup/pull-secret.txt
+
 Ensure you are logged into Azure via the cli (az login) then run cluster-create.sh to create the openshift cluster. Once completed run argo-create.sh to install the argocd operator and web-app. 
 
 Script Summary
