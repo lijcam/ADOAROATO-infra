@@ -1,34 +1,38 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Azure DevOps and Azure Red Hat OpenShift 
+What are the effective patterns for integrating Azure DevOps and an application platform like Azure Red Hat OpenShift? This repository combines Red Hat’s continuous integration, continuous delivery best practices for application delivery on the Azure Red Hat OpenShift application platform. 
+
+There are several key components that form the building blocks of this demonstration:
+1. [Azure Pipeline CI example](https://github.com/lijcam/tailspin-azurepipeline-ci)
+2. [OpenShift Tekton CI example](https://github.com/lijcam/tailspin-tekton-ci)
 
 # Getting Started
-To get an Openshift cluster running in Azure you will need a pull secret which can be obtained from the following link:
 
-https://console.redhat.com/openshift/install/pull-secret
+A lot of the set up is automated, it's not perfect there is still a few manual set steps:
 
-If you haven't done so already, clone this git repo to a convenient location, then copy the pull secret to setup/pull-secret.txt
+1. Firstly [Set up Azure DevOps](setup/AzureDevOps/README.md) and import the demo repositories. 
+2. Provision the Azure Red Hat OpenShift instance as follows:
 
-Ensure you are logged into Azure via the cli (az login) then run cluster-create.sh to create the openshift cluster. Once completed run argo-create.sh to install the argocd operator and web-app. 
+A pull secrect is needed to provision a Azure Red Hat OpenShift cluster. Download it from the [Red Hat cloud console](https://console.redhat.com/openshift/install/pull-secret) and make a copy  at `setup/pull-secret.txt`
 
-**Script Summary**
+You'll need to have authenticated with the `az` command before running:
 
-setup/cluster-create.sh - Creates an Openshift cluster in Azure
+```
+./cluster-create.sh
+```
 
-setup/argo-create.sh - Sets up the argocd operator in the argocd namespace. Registers the web-app to be managed by argocd and syncs the application into the web-app namespace. 
+Once created, deploy the operators and web-app:
 
-setup/utilities/ocp-login.sh - Prints the kubeadmin username and password, the webconsole url, and logs in as kubeadmin
+```
+/argo-create.sh
+```
 
-setup/utilities/delete-cluster.sh - Deletes openshift off Azure, this is your nuclear option for a hard reset
+## Script Summary
 
-setup/utiliites/delete-argo.sh - Deletes argocd and the web-app from your cluster, undoing everything done by argo-create.sh. Useful for resetting the demo once done
+1. `setup/cluster-create.sh` — Creates an Azure Red Hat OpenShift cluster.
+2. `setup/argo-create.sh` — Sets up the argocd operator in the argocd namespace, than registers the web-app in argo, and syncs the application into the web-app namespace. 
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+3. `setup/utilities/ocp-login.sh` — Prints the `kubeadmin` username, password, and webconsole url. Finally authenticates as the `kubeadmin`.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+4. `setup/utilities/delete-cluster.sh` — Deletes the Azure Red Hat OpenShift cluster, this is the nuclear option, a hard reset.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+5. `setup/utiliites/delete-argo.sh` — Deletes argocd and the web-app from your cluster. Useful for resetting the demo.
