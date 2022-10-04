@@ -7,9 +7,7 @@ There are several key components that form the building blocks of this demonstra
 
 # Getting Started
 
-Prerequisites:
-
-Openshift (oc), ArgoCD (argocd), and Azure (az) CLI tools. 
+Prerequisites: Openshift (oc), ArgoCD (argocd), and Azure (az) CLI tools. 
 
 A lot of the set up is automated, it's not perfect, there are still a few manual set steps:
 
