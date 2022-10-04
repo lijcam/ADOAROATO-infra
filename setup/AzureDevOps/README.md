@@ -14,7 +14,7 @@ Cleaning up the projects is as simple as:
 
 ## The details 
 
-There are a few dependencies that need to satisfied before the automation scripts can function, as well as a few manual steps—sorry! The simple ones being installing the [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH), and [jq](https://stedolan.github.io/jq/download/).
+There are a few dependencies that need to be satisfied before the automation scripts can function, as well as a few manual steps—sorry! The simple ones being installing the [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH), and [jq](https://stedolan.github.io/jq/download/).
 
 The Azure DevOps extention is already required, this can be installed by running:
 
