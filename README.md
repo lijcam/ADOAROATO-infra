@@ -7,7 +7,7 @@ There are several key components that form the building blocks of this demonstra
 
 # Getting Started
 
-A lot of the set up is automated, it's not perfect there is still a few manual set steps:
+A lot of the set up is automated, it's not perfect, there are still a few manual set steps:
 
 1. Firstly [Set up Azure DevOps](setup/AzureDevOps/README.md) and import the demo repositories. 
 2. Provision the Azure Red Hat OpenShift instance as follows:
@@ -29,7 +29,7 @@ Once created, deploy the operators and web-app:
 ## Script Summary
 
 1. `setup/cluster-create.sh` — Creates an Azure Red Hat OpenShift cluster.
-2. `setup/argo-create.sh` — Sets up the argocd operator in the argocd namespace, than registers the web-app in argo, and syncs the application into the web-app namespace. 
+2. `setup/argo-create.sh` — Sets up the argocd operator in the argocd namespace, then registers the web-app in argo, and syncs the application into the web-app namespace. 
 
 3. `setup/utilities/ocp-login.sh` — Prints the `kubeadmin` username, password, and webconsole url. Finally authenticates as the `kubeadmin`.
 
