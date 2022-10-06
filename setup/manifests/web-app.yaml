@@ -8,6 +8,7 @@ spec:
   source:
     repoURL: https://github.com/lijcam/tailspin-argocd-cd
     targetRevision: main
+    path: .
   destination:
     namespace: web-app
-    server: https://api.pra8b51q.australiacentral.aroapp.io:6443
+    server: https://api.pjdaufcb.australiacentral.aroapp.io:6443
