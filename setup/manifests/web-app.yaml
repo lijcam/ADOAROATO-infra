@@ -6,9 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/lijcam/ADOAROATO-infra
+    repoURL: https://github.com/lijcam/tailspin-argocd-cd
     targetRevision: main
-    path: app
   destination:
     namespace: web-app
-    server: https://api.raztbcr2.australiacentral.aroapp.io:6443
+    server: https://api.pra8b51q.australiacentral.aroapp.io:6443

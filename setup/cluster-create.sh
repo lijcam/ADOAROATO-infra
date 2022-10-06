@@ -5,6 +5,8 @@ export RESOURCEGROUP=ocp-rg
 export CLUSTER=testcluster
 export LOCATION=australiacentral
 
+az login
+
 #Register our resource providers 
 az provider register -n Microsoft.RedHatOpenShift --wait
 az provider register -n Microsoft.compute --wait
