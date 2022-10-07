@@ -1,5 +1,5 @@
 # Azure DevOps and Azure Red Hat OpenShift 
-What are the effective patterns for integrating Azure DevOps and an application platform like Azure Red Hat OpenShift? This repository combines Red Hat’s continuous integration, continuous delivery best practices for application delivery on the Azure Red Hat OpenShift application platform. 
+What are the effective patterns for integrating Azure DevOps and an application platform like Azure Red Hat OpenShift? This repository combines Red Hat’s continuous integration and continuous delivery best practices for application delivery on the Azure Red Hat OpenShift application platform. 
 
 There are several key components that form the building blocks of this demonstration:
 1. [Azure Pipeline CI example](https://github.com/lijcam/tailspin-azurepipeline-ci)
@@ -9,23 +9,25 @@ There are several key components that form the building blocks of this demonstra
 
 Prerequisites: OpenShift (oc), ArgoCD (argocd), and Azure (az) CLI tools. 
 
-A lot of the set up is automated, it's not perfect, there are still a few manual set steps:
+A lot of the setup is automated, it's not perfect, and there are still a few manual set steps:
 
 1. Firstly [Set up Azure DevOps](setup/AzureDevOps/README.md) and import the demo repositories. 
 2. Provision the Azure Red Hat OpenShift instance as follows:
 
-A pull secrect is needed to provision a Azure Red Hat OpenShift cluster. Download it from the [Red Hat cloud console](https://console.redhat.com/openshift/install/pull-secret) and make a copy  at `setup/pull-secret.txt`
+Clone this repository into a local directory. 
 
-You'll need to have authenticated with the `az` command before running:
+A pull secret is needed to provision an Azure Red Hat OpenShift cluster. Download it from the [Red Hat cloud console](https://console.redhat.com/openshift/install/pull-secret) and make a copy  at `setup/pull-secret.txt`
+
+Run the ‘setup/cluster-create.sh’ script to provision a cluster and install the OpenShift instance. The script will prompt you to log in to Azure and accept a self-signed certificate. 
 
 ```
 ./cluster-create.sh
 ```
 
-Once created, deploy the operators and web-app:
+Once created, deploy the operators and web-app by running the ‘argo-create.sh’ script. The script will ask you to accept some certificates and authenticate to ArgoCD by logging into the OpenShift console. For this, the script will output the kubeadmin username and password which can be used to log in. 
 
 ```
-/argo-create.sh
+./argo-create.sh
 ```
 
 ## Script Summary
@@ -37,4 +39,6 @@ Once created, deploy the operators and web-app:
 
 4. `setup/utilities/delete-cluster.sh` — Deletes the Azure Red Hat OpenShift cluster, this is the nuclear option, a hard reset.
 
-5. `setup/utiliites/delete-argo.sh` — Deletes argocd and the web-app from your cluster. Useful for resetting the demo.
+5. `setup/utilites/delete-argo.sh` — Deletes argocd and the web-app from your cluster. Useful for resetting the demo.
+
+
