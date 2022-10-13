@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: web
-          image: quay.io/lijcam/space-game-web:latest
+          image: quay.io/rh_ee_cschmitz/spacegame-web:v1
           ports:
-          - containerPort: 5001
+          - containerPort: 8080
 ---
 apiVersion : apps/v1
 kind: Deployment
@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
         - name: leaderboard
-          image: quay.io/lijcam/space-game-leaderboard
+          image: quay.io/rh_ee_cschmitz/spacegame-leaderboard:v1
           ports:
-          - containerPort: 5000
+          - containerPort: 8080
