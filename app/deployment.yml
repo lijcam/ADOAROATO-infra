@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: quay.io/rh_ee_cschmitz/spacegame-web:v1
+          image: quay.io/rdrysdal/ado-aro-web:latest
           ports:
           - containerPort: 8080
 ---
@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
         - name: leaderboard
-          image: quay.io/rh_ee_cschmitz/spacegame-leaderboard:v1
+          image: quay.io/rdrysdal/ado-aro-leaderboard:latest
           ports:
           - containerPort: 8080
