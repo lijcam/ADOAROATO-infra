@@ -2,7 +2,7 @@
 #
 # Setup Azure DevOps and import git repositories.
 set -ex
-source ./defaults.env
+source ./../defaults.env
 
 #######################################
 # Routines to run on script termination, failures, and errors.
