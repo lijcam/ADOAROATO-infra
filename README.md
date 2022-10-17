@@ -16,7 +16,7 @@ A lot of the setup is automated, it's not perfect, and there are still a few man
 
 Clone this repository into a local directory. 
 
-A pull secret is needed to provision an Azure Red Hat OpenShift cluster. Download it from the [Red Hat cloud console](https://console.redhat.com/openshift/install/pull-secret) and make a copy  at `setup/pull-secret.txt`
+A pull secret is needed to provision an Azure Red Hat OpenShift cluster. Download it from the [Red Hat cloud console](https://console.redhat.com/openshift/install/pull-secret) and make a copy  at `setup/put-pull-secrect-in-here/pull-secret.txt`
 
 Run the ‘setup/cluster-create.sh’ script to provision a cluster and install the OpenShift instance. The script will prompt you to log in to Azure and accept a self-signed certificate. 
 
