@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 #
 # Setup Azure Red Hat OpenShift cluster.
 set -ex
@@ -54,7 +54,7 @@ main() {
   az network vnet subnet update --name master-subnet --resource-group $AZURE_RESOURCE_GROUP  --vnet-name aro-vnet --disable-private-link-service-network-policies true
 
   #Create the cluster; Requires pull secret in active directory
-  az aro create  --resource-group  $AZURE_RESOURCE_GROUP --name $CLUSTER --vnet aro-vnet --master-subnet master-subnet --worker-subnet worker-subnet --pull-secret @pull-secret.txt 
+  az aro create  --resource-group  $AZURE_RESOURCE_GROUP --name $AZURE_CLUSTER --vnet aro-vnet --master-subnet master-subnet --worker-subnet worker-subnet --pull-secret @put-pull-secret-in-here/pull-secret.txt 
 
   source ./aro-login.sh
 

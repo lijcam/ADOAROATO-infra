@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 #
 # Remove Azure Red Hat OpenShift cluster.
 set -ex
@@ -15,7 +15,12 @@ main() {
 
   check_dependencies
 
-  az aro delete --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_CLUSTER
+  # Remove the client token. But if we don't have one, we still want to continue.
+  oc logout || true
+
+  az aro delete --yes --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_CLUSTER
+
+  az group delete --yes --name $AZURE_RESOURCE_GROUP
 
 }
 

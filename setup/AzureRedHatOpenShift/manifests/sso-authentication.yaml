@@ -1,4 +1,5 @@
-#Very similar to youtube video https://www.youtube.com/watch?v=xYCX2EejSMc&t=107s&ab_channel=OpenShift
+# Inspiration: https://www.youtube.com/watch?v=xYCX2EejSMc&t=107s&ab_channel=OpenShift
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:

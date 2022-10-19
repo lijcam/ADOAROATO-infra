@@ -7,6 +7,7 @@ Populating the Azure DevOps subscription is a straightforward operation, by runn
 ./ado-create.sh [name of the project] [Path to DevOps organisation]
 ```
 The default configuration is stored in `defaults.env` which also provides the shared functions for the create and delete scripts. 
+
 Cleaning up the projects is as simple as:
 ```
 ./ado-delete.sh [name of the project] [Path to DevOps organisation]
