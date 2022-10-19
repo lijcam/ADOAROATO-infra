@@ -23,7 +23,13 @@ Logging into the cluster with the `oc` command as the kubeadmin has been automat
 
 # Deploy the OpenShift configuration.
 
-Once created, deploy the operators and web-app by running the ‘argo-create.sh’ script. The script will ask you to accept some certificates and authenticate to ArgoCD by logging into the OpenShift console. For this, the script will output the kubeadmin username and password which can be used to log in. 
+Depending what you're trying to show case, there is post cluster install configuration to apply. Provided are two manifests to install and perform light integration of Tekton and Argo CD.
+
+```
+cd ./manifests
+oc apply -f openshift-gitops.yaml
+oc apply -f openshift-pipelines.yaml
+```
 
 ## Script Summary
 
