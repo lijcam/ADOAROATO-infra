@@ -2,7 +2,7 @@
 #
 # Remove Argo CD resources.
 set -ex 
-source ./../defaults.env
+source ./../../defaults.env
 
 main() {
 

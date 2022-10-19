@@ -2,7 +2,7 @@
 #
 # Remove Azure Red Hat OpenShift cluster.
 set -ex
-source ./../defaults.env
+source ./../../defaults.env
 
 #######################################
 # The main routine.

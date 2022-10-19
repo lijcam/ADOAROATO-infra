@@ -7,15 +7,13 @@ There are several key components that form the building blocks of this demonstra
 3. [OpenShift Argo CD example](https://github.com/lijcam/tailspin-argocd-cd)
 # Getting Started
 
-Prerequisites: OpenShift (oc), Argo CD (argocd), and Azure (az) CLI. 
-
-A lot of the setup is automated, it's not perfect, and there are still a few manual set steps:
+To run the demo setup, several command line tools need to be installed, `argocd`, `az`, `jq`, and `oc`.
+And the setup has been broken into two steps:
 
 1. Firstly [Set up Azure DevOps](setup/AzureDevOps/README.md) and import the demo repositories, then
 2. Provision the [Azure Red Hat OpenShift cluster](setup/AzureRedHatOpenShift/README.md):
 
-```
-./argo-create.sh
-```
+# Default configuration
+Modifying the names and locations of resources is described in `defaults.env` file. Options that can change include, names of git repositories and source locations, component names such as the cluster, and resource groups.
 
 
