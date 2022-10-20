@@ -3,7 +3,7 @@
 # Remove Azure DevOps projects.
 
 set -ex
-source ./../defaults.env
+source ./../../defaults.env
 
 main() {
 
