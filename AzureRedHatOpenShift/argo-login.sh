@@ -3,7 +3,7 @@
 # Login to the demo Argo CD instance.
 
 set -ex
-source ./../../defaults.env
+source ./../defaults.env
 
 #######################################
 # Get the host address to the argocd instance.

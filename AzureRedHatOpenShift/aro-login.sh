@@ -2,7 +2,7 @@
 #
 # Log the oc client into Azure Red Hat OpenShift.
 set -ex
-source ./../../defaults.env
+source ./../defaults.env
 
 #######################################
 # The main routine.

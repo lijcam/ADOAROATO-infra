@@ -2,7 +2,7 @@
 #
 # Setup Azure Red Hat OpenShift cluster.
 set -ex
-source ./../../defaults.env
+source ./../defaults.env
 
 # Look for the pull secret file
 
